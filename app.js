@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
   const { name, email, subject, tel, message } = req.body;
   console.log(req.body);
-  alert(process.env.EMAIL_PASSWORD);
+  res.send(process.env.EMAIL_PASSWORD);
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
